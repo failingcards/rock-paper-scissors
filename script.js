@@ -1,7 +1,18 @@
+const buttons = document.querySelectorAll("button");
+let playerSelection;
+const playerSelectionMessage = document.createElement("div");
+document.body.appendChild(playerSelectionMessage);
+
+buttons.forEach(button => {
+    button.addEventListener("click", () => {
+        const playerSelection = button.id;  
+        playerSelectionMessage.textContent = `You chose: ${playerSelection}.`;
+    });
+});
+
 function playGame() {
     function getHumanChoice() {
-        let humanChoice = prompt("Pick your choice");
-        return humanChoice;
+        return playerSelection;
     };
     
     function getComputerChoice() {
