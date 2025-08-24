@@ -6,6 +6,9 @@ document.body.appendChild(playerSelectionMessage);
 const computerSelectionMessage = document.createElement("div");
 document.body.appendChild(computerSelectionMessage);
 
+const roundWinner = document.createElement("div");
+document.body.appendChild(roundWinner);
+
 
 let humanScore = 0;
 let computerScore = 0;
@@ -17,15 +20,13 @@ function playGame() {
     
 
     if (computerScore > humanScore) {
-        console.log(`Computer wins! Score: ${computerScore} - ${humanScore}.`);
+        roundWinner.textContent = `Computer wins! Score: ${computerScore} - ${humanScore}.`;
     } else if (humanScore > computerScore) {
-        console.log(`You win! Score: ${humanScore} - ${computerScore}.`);
+        roundWinner.textContent = `You win! Score: ${humanScore} - ${computerScore}.`;
     } else {
-        console.log("It's a tie!")
+        roundWinner.textContent = "It's a tie!";
     };
 };
-
-playGame();
 
 function playRound(playerSelection, computerChoice) {
     computerChoice = getComputerChoice();
@@ -66,6 +67,8 @@ buttons.forEach(button => {
         playerSelectionMessage.textContent = `You chose: ${playerSelection}.`;
 
         playRound(playerSelection, getComputerChoice());
+
+        playGame();
     });
 });
 
