@@ -37,12 +37,6 @@ function playGame() {
         }
     };
 
-    playRound();
-    playRound();
-    playRound();
-    playRound();
-    playRound();
-
     if (computerScore > humanScore) {
         console.log(`Computer wins! Score: ${computerScore} - ${humanScore}.`);
     } else if (humanScore > computerScore) {
