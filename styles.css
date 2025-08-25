@@ -4,3 +4,31 @@
     padding: 0;
     font-family: 'Roboto', sans-serif;
 }
+
+#game-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    height: 100vh;
+    flex-direction: column-reverse;
+}
+
+#button-container {
+    display: flex;
+    gap: 1rem;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.player-selection,
+.computer-selection,
+.round-winner,
+.game-over,
+.scoreboard {
+    text-align: center;
+}

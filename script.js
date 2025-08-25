@@ -1,29 +1,29 @@
 const buttons = document.querySelectorAll("button");
+const messagesContainer = document.getElementById("messages")
 
 const playerSelectionMessage = document.createElement("div");
 playerSelectionMessage.classList.add("player-selection");
-document.body.appendChild(playerSelectionMessage);
+messagesContainer.appendChild(playerSelectionMessage);
 
 const computerSelectionMessage = document.createElement("div");
 computerSelectionMessage.classList.add("computer-selection");
-document.body.appendChild(computerSelectionMessage);
+messagesContainer.appendChild(computerSelectionMessage);
 
 const gameWinner = document.createElement("div");
 gameWinner.classList.add("round-winner")
-document.body.appendChild(gameWinner);
+messagesContainer.appendChild(gameWinner);
 
 const gameOver = document.createElement("div");
 gameOver.classList.add("game-over");
-document.body.appendChild(gameOver);
+messagesContainer.appendChild(gameOver);
 
 const roundWinner = document.createElement("div");
 roundWinner.classList.add("round-winner");
-document.body.appendChild(roundWinner);
+messagesContainer.appendChild(roundWinner);
 
 const scoreBoard = document.createElement("div");
 scoreBoard.classList.add("scoreboard");
-document.body.appendChild(scoreBoard);
-
+messagesContainer.appendChild(scoreBoard);
 
 const maxRounds = 5;
 
