@@ -5,6 +5,11 @@
     font-family: 'Roboto', sans-serif;
 }
 
+body {
+    background-color: #1f2937;
+    color: #f9faf8;
+}
+
 #game-container {
     display: flex;
     justify-content: center;
@@ -19,10 +24,16 @@
     gap: 1rem;
 }
 
-button {
+.button {
     padding: 10px 20px;
     font-size: 16px;
     cursor: pointer;
+    background-color: #374151;
+    color: #e5e7eb;
+}
+
+.button:hover {
+    background-color: #4b5563
 }
 
 .player-selection,
@@ -31,4 +42,12 @@ button {
 .game-over,
 .scoreboard {
     text-align: center;
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    background-color: #e5e7eb;
 }
