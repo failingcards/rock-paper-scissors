@@ -1,21 +1,27 @@
 const buttons = document.querySelectorAll("button");
 
 const playerSelectionMessage = document.createElement("div");
+playerSelectionMessage.classList.add("player-selection");
 document.body.appendChild(playerSelectionMessage);
 
 const computerSelectionMessage = document.createElement("div");
+computerSelectionMessage.classList.add("computer-selection");
 document.body.appendChild(computerSelectionMessage);
 
 const gameWinner = document.createElement("div");
+gameWinner.classList.add("round-winner")
 document.body.appendChild(gameWinner);
 
 const gameOver = document.createElement("div");
+gameOver.classList.add("game-over");
 document.body.appendChild(gameOver);
 
 const roundWinner = document.createElement("div");
+roundWinner.classList.add("round-winner");
 document.body.appendChild(roundWinner);
 
 const scoreBoard = document.createElement("div");
+scoreBoard.classList.add("scoreboard");
 document.body.appendChild(scoreBoard);
 
 
