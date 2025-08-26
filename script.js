@@ -1,6 +1,12 @@
-const buttons = document.querySelectorAll("button");
-const messagesContainer = document.getElementById("messages")
+// Create DOM elements
+const gameButtons = document.querySelectorAll(".button");
+const messagesContainer = document.querySelector("#messages");
+const playAgainPopup = document.querySelector(".popup");
+const overlay = document.querySelector(".overlay");
+const playAgainYes = document.querySelector(".play-again-yes");
+const playAgainNo = document.querySelector(".play-again-no");
 
+// Create message containers
 const playerSelectionMessage = document.createElement("div");
 playerSelectionMessage.classList.add("player-selection");
 messagesContainer.appendChild(playerSelectionMessage);
@@ -25,11 +31,12 @@ const scoreBoard = document.createElement("div");
 scoreBoard.classList.add("scoreboard");
 messagesContainer.appendChild(scoreBoard);
 
+// Define game variables
 const maxRounds = 5;
-
 let humanScore = 0;
 let computerScore = 0;
 
+// Define helper functions
 function getComputerChoice() {
     const choices = ["rock", "paper", "scissors"];
     const choice = choices[Math.floor(Math.random() * 3)];
@@ -37,6 +44,54 @@ function getComputerChoice() {
     return choice;
 };
 
+function handleGameOver() {
+    if (humanScore === maxRounds || computerScore === maxRounds) {
+        gameOver.textContent = "Game Over";
+        gameButtons.forEach(button => {
+            button.disabled = true;
+            button.classList.add("disabled");
+        });
+
+        overlay.style.display = "block"
+
+        playAgainPopup.style.display = "flex";
+        playAgainPopup.style.flexDirection = "column";
+        playAgainPopup.style.gap = "1rem"
+        
+        roundWinner.textContent = "";
+        playerSelectionMessage.textContent = "";
+        computerSelectionMessage.textContent = "";
+        scoreBoard.textContent = "";
+            
+        if (computerScore > humanScore) {
+            gameWinner.textContent = `Computer won the game! Score: ${computerScore} - ${humanScore}.`;
+        } else {
+            gameWinner.textContent = `You won the game! Score: ${humanScore} - ${computerScore}.`;
+        }
+    };
+};
+
+function resetGame() {
+    humanScore = 0;
+    computerScore = 0;
+
+    playerSelectionMessage = "";
+    computerSelectionMessage = "";
+    gameWinner = "";
+    gameOver = "";
+    roundWinner = "";
+    scoreBoard = "";
+
+    playAgainPopup.style.display = "none";
+    overlay.style.display = "none";
+
+    gameButtons.forEach(button => {
+        button.disabled = false;
+        button.classList.remove("disabled");
+    });
+};
+
+// Define playRound()
 function playRound(playerSelection) {
     if (humanScore === maxRounds || computerScore === maxRounds) {
         return;
@@ -60,27 +115,17 @@ function playRound(playerSelection) {
 
     scoreBoard.textContent = `Score: You ${humanScore} - Computer ${computerScore}`;
 
-    if (humanScore === maxRounds || computerScore === maxRounds) {
-        gameOver.textContent = "Game Over";
-        buttons.forEach(btn => btn.disabled = true);
-
-        roundWinner.textContent = "";
-        playerSelectionMessage.textContent = "";
-        computerSelectionMessage.textContent = "";
-        scoreBoard.textContent = "";
-            
-        if (computerScore > humanScore) {
-        gameWinner.textContent = `Computer won the game! Score: ${computerScore} - ${humanScore}.`;
-        } else {
-        gameWinner.textContent = `You won the game! Score: ${humanScore} - ${computerScore}.`;
-        }
-    }
+    handleGameOver();
 };
 
-buttons.forEach(button => {
+// Add event listeners for game buttons
+gameButtons.forEach(button => {
     button.addEventListener("click", () => {
         const playerSelection = button.id;  
         playerSelectionMessage.textContent = `You chose: ${playerSelection}.`;
         playRound(playerSelection);
     });
 });
+
+// Add event listeners for play-again buttons
+
