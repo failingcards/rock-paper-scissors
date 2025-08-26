@@ -3,8 +3,8 @@ const gameButtons = document.querySelectorAll(".button");
 const messagesContainer = document.querySelector("#messages");
 const playAgainPopup = document.querySelector(".popup");
 const overlay = document.querySelector(".overlay");
-const playAgainYes = document.querySelector(".play-again-yes");
-const playAgainNo = document.querySelector(".play-again-no");
+const playAgainYes = document.querySelector("#play-again-yes");
+const playAgainNo = document.querySelector("#play-again-no");
 
 // Create message containers
 const playerSelectionMessage = document.createElement("div");

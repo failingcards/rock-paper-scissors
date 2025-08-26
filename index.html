@@ -10,7 +10,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
+    <h1 class="title">Rock Paper Scissors</h1>
     <div id="game-container">
+        <p class="decision-prompt">Pick one ☝️</p>
         <div id="button-container">
             <button class="button" id="rock">Rock</button>
             <button class="button" id="paper">Paper</button>
@@ -24,8 +26,8 @@
     <div class="play-again popup">
         <p class="play-again-msg">Game over! Play again?</p>
         <div class="play-again-container">
-            <button class="play-again-yes">Yes</button>
-            <button class="play-again-no">No</button>
+            <button id="play-again-yes" class="play-again-button">Yes</button>
+            <button id="play-again-no" class="play-again-button">No</button>
         </div>
     </div>
 </body>

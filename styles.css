@@ -30,6 +30,8 @@ body {
     cursor: pointer;
     background-color: #374151;
     color: #e5e7eb;
+    border: 1px solid #374151;
+    border-radius: 8px;
 }
 
 .button:hover {
@@ -75,4 +77,22 @@ body {
     min-width: 250px;
     color: black;
     z-index: 20;
+}
+
+.title {
+    text-align: center;
+    font-size: 40px;
+}
+
+.play-again-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    color: black;
+    border: 1px solid white;
+    border-radius: 8px;
+}
+
+.decision-prompt {
+    font-weight: light;
 }
