@@ -81,7 +81,7 @@ body {
 
 .title {
     text-align: center;
-    font-size: 40px;
+    font-size: 48px;
 }
 
 .play-again-button {
@@ -94,5 +94,13 @@ body {
 }
 
 .decision-prompt {
-    font-weight: light;
+    font-weight: 300;
+    color: #e5e7eb;
+}
+
+.rules {
+    text-align: center;
+    font-size: 18px;
+    font-weight: 300;
+    color: #e5e7eb;
 }
