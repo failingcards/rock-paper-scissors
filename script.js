@@ -75,12 +75,12 @@ function resetGame() {
     humanScore = 0;
     computerScore = 0;
 
-    playerSelectionMessage = "";
-    computerSelectionMessage = "";
-    gameWinner = "";
-    gameOver = "";
-    roundWinner = "";
-    scoreBoard = "";
+    playerSelectionMessage.textContent = "";
+    computerSelectionMessage.textContent = "";
+    gameWinner.textContent = "";
+    gameOver.textContent = "";
+    roundWinner.textContent = "";
+    scoreBoard.textContent = "";
 
     playAgainPopup.style.display = "none";
     overlay.style.display = "none";
@@ -128,4 +128,9 @@ gameButtons.forEach(button => {
 });
 
 // Add event listeners for play-again buttons
+playAgainNo.addEventListener("click", function() {
+    playAgainPopup.style.display = "none";
+    overlay.style.display = "none";
+});
 
+playAgainYes.addEventListener("click", resetGame);

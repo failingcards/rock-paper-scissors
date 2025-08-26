@@ -36,6 +36,12 @@ body {
     background-color: #4b5563
 }
 
+.button.disabled:hover {
+    cursor: not-allowed;
+    background-color: #374151;
+}
+
+
 .player-selection,
 .computer-selection,
 .round-winner,
@@ -44,10 +50,29 @@ body {
     text-align: center;
 }
 
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 10;
+}
+
 .popup {
     display: none;
     position: fixed;
     top: 50%;
     left: 50%;
+    transform: translate(-50%, -50%);
     background-color: #e5e7eb;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    text-align: center;
+    min-width: 250px;
+    color: black;
+    z-index: 20;
 }
