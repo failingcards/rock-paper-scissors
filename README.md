@@ -30,11 +30,10 @@ A simple browser-based **Rock Paper Scissors** game built with HTML, CSS, and Ja
 
 ## File Structure
 
-rock-paper-scissors/
-│
-├─ index.html # Main HTML file
-├─ styles.css # Styling for the game
-└─ script.js # Game logic
+rock-paper-scissors
+- index.html # Main HTML file
+- styles.css # Styling for the game
+- script.js # Game logic
 
 ## License
 
